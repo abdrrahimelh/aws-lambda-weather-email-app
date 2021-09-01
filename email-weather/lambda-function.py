@@ -7,9 +7,12 @@ def lambda_handler(event, context):
     # Replace SENDER and RECIEPIENT. If your account 
     # is still in the sandbox, this address must be verified.
     SENDER = sender email
+    RECIPIENT = reciepient email
+    
+    #getting the data
     data= dload.json("https://api.openweathermap.org/data/2.5/weather?q="+your_city+"&units=metric&appid=10233baa27900bde1363821e57d39603")
 
-    RECIPIENT = reciepient email
+    
     temperature=data["main"]["feels_like"]
     description=data["weather"][0]["description"]
     icon=data["weather"][0]["icon"]
