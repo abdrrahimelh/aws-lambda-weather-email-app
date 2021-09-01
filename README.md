@@ -6,3 +6,4 @@ Go back to your lambda section and add a layer for our library ("dload") upload 
 Go to your lambda function past the code and  don't forget to edit the city the sender and receiver and also the region.
 Click on add layer above the code and add the layer that you've uploaded.
 Test your function.
+You can set a schedule trigger in CloudWatch so the function can be triggered in a time of the day .
