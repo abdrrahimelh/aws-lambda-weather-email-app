@@ -2,21 +2,18 @@ import boto3
 from botocore.exceptions import ClientError
 import dload
 
-# Replace sender@example.com with your "From" address.
-# This address must be verified with Amazon SES.
+
 def lambda_handler(event, context):
+    # Replace SENDER and RECIEPIENT. If your account 
+    # is still in the sandbox, this address must be verified.
     SENDER = sender email
     data= dload.json("https://api.openweathermap.org/data/2.5/weather?q="+your_city+"&units=metric&appid=10233baa27900bde1363821e57d39603")
-    # Replace recipient@example.com with a "To" address. If your account 
-    # is still in the sandbox, this address must be verified.
+
     RECIPIENT = reciepient email
     temperature=data["main"]["feels_like"]
     description=data["weather"][0]["description"]
     icon=data["weather"][0]["icon"]
-    # Specify a configuration set. If you do not want to use a configuration
-    # set, comment the following variable, and the 
-    # ConfigurationSetName=CONFIGURATION_SET argument below.
-    #CONFIGURATION_SET = "ConfigSet"
+
     
     # If necessary, replace eu-west-3 with the AWS Region you're using for Amazon SES.
     AWS_REGION = "eu-west-3"
@@ -74,9 +71,7 @@ def lambda_handler(event, context):
                 },
             },
             Source=SENDER,
-            # If you are not using a configuration set, comment or delete the
-            # following line
-            #ConfigurationSetName=CONFIGURATION_SET,
+       
         )
     # Display an error if something goes wrong.	
     except ClientError as e:
