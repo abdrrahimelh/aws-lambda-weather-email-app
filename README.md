@@ -14,3 +14,7 @@ Click on add layer above the code and add the layer that you've uploaded.
 Test your function.
 
 You can set a schedule trigger in CloudWatch so the function can be triggered in a time of the day .
+
+Here is a diagram of our infrastructure.
+![undefined](https://user-images.githubusercontent.com/59322515/131745225-14a49f56-dace-45e1-b6a9-5eae51925771.jpg)
+
